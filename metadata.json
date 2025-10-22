@@ -1,0 +1,7 @@
+{
+  "name": "CalorieWise AI",
+  "description": "An AI-powered weight-loss assistant that analyzes meal photos to provide detailed nutritional information. Users can track their daily intake, set personalized goals, and monitor their progress towards a healthier lifestyle.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}

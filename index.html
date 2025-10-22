@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CalorieWise AI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              urdu: ['Noto Nastaliq Urdu', 'sans-serif'],
+            },
+          },
+        },
+      }
+    </script>
+    <style>
+      #printable-workout-plan {
+        display: none;
+      }
+      @media print {
+        body * {
+          visibility: hidden;
+        }
+        #printable-workout-plan, #printable-workout-plan * {
+          visibility: visible;
+        }
+        #printable-workout-plan {
+          display: block;
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 100%;
+          padding: 1rem;
+          color: #000;
+          font-family: 'Inter', sans-serif;
+        }
+        
+        #printable-workout-plan h1, 
+        #printable-workout-plan h2, 
+        #printable-workout-plan h3 {
+           font-weight: bold;
+           color: #000 !important;
+        }
+        #printable-workout-plan h1 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+        #printable-workout-plan .plan-meta { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; font-size: 0.9rem; margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 2px solid #000; }
+        #printable-workout-plan .plan-description { margin-bottom: 1.5rem; }
+        #printable-workout-plan h2 { font-size: 1.5rem; }
+        #printable-workout-plan h3 { font-size: 1.2rem; }
+        #printable-workout-plan .day-block { break-inside: avoid; page-break-after: auto; margin-bottom: 2rem; }
+        #printable-workout-plan .session-block { margin-top: 1rem; }
+        
+        #printable-workout-plan table { 
+          width: 100%; 
+          border-collapse: collapse; 
+          margin-top: 0.5rem; 
+        }
+        #printable-workout-plan th, #printable-workout-plan td { 
+          border: 1px solid #ccc; 
+          padding: 8px; 
+          text-align: left; 
+          font-size: 0.9rem;
+        }
+        #printable-workout-plan th { 
+          background-color: #eee; 
+          font-weight: 600;
+        }
+        #printable-workout-plan .notes {
+            font-size: 0.8rem;
+            font-style: italic;
+            color: #555 !important;
+        }
+        #printable-workout-plan img {
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+            border-radius: 4px;
+            vertical-align: middle;
+        }
+
+        @page {
+          size: A4;
+          margin: 1.5cm;
+        }
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.1.1/",
+    "react": "https://aistudiocdn.com/react@^19.1.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.19.0",
+    "recharts": "https://aistudiocdn.com/recharts@^3.2.0",
+    "firebase/app": "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js",
+    "firebase/auth": "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js",
+    "firebase/firestore": "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js",
+    "vite": "https://aistudiocdn.com/vite@^7.1.5",
+    "path": "https://aistudiocdn.com/path@^0.12.7",
+    "url": "https://aistudiocdn.com/url@^0.11.4",
+    "@vitejs/plugin-basic-ssl": "https://aistudiocdn.com/@vitejs/plugin-basic-ssl@^2.1.0",
+    "firebase/": "https://aistudiocdn.com/firebase@^12.2.1/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-slate-50 text-slate-800 dark:bg-slate-900 dark:text-slate-200 transition-colors duration-300">
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
