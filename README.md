@@ -122,4 +122,6 @@ To allow users to sign in, you must authorize the URL provided by ngrok.
 
 4.  Save all changes. You can now open the `ngrok` URL on any device to test Google Sign-In.
 
+5.  Go to your Firebase project console: "https://console.firebase.google.com". In your project's settings, find your web app's configuration snippet. Copy the `firebaseConfig` object and paste it in firebaseConfig.ts.
+
 **Note:** The free version of `ngrok` generates a new URL every time you restart the server. You will need to update this URL in both Firebase and Google Cloud Console each time.
